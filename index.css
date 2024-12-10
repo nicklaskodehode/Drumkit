@@ -1,30 +1,28 @@
-/* body{
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.drum-container{
-    display: flex;
-    width: 100%;
-} */
-
-
-/* TEST CODE -------------------------------------- */
 body{
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
 }
 
-.container {
+#container{
     display: flex;
-    flex-direction: row;
-    width: 100vw;
-    justify-content: space-evenly;   
+    flex-direction: column;
+    width: 100%;
 }
-.drum{
-    font-size: 20;
+#picContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+#keyContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+.drumImg{
+    width: 100px;
+    cursor: pointer;
+}
+
+.drumLabel {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }

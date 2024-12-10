@@ -1,8 +1,10 @@
 const container = document.querySelector("#container");
+const picContainer = document.querySelector("#picContainer");
+const keyContainer = document.querySelector("#keyContainer");
 
 const drumkit = {
     clap: "a",
-    hikat: "s",
+    hihat: "s",
     kick: "d",
     openhat: "f",
     ride: "g",
@@ -11,57 +13,22 @@ const drumkit = {
     tom: "k"
 }
 
-
-Object.keys(drumkit).foreach((instrument) => {
-    console.log(instrument);
+for(let instrument in drumkit) {
     const drumImg = document.createElement("img");
-    drumImg.src = "./pics" + instrument + ".png";
+    drumImg.classList.add("drumImg");
+    drumImg.src = "./pics/" + instrument + ".png";
 
     drumImg.addEventListener("click", () => {
         const drumAudio = new Audio("./sounds/" + instrument + ".wav");
         drumAudio.play();
     });
-
-    container.appendChild(drumImg);
+    picContainer.appendChild(drumImg);
 
     const drumLabel = document.createElement("p");
-    drumLabel.textContent = instrument[0];
-    container.appendChild(drumLabel);
-});
-    
-
-
-
-
-
-
-
-
-
-
-
-
-// TEST CODE ---------------------------------------------------------------
-
-// for(const key in drumkit){
-//     const htmlElement = document.createElement("div");
-//     htmlElement.classList.add("drum"); 
-//     htmlElement.style.color = "blue";
-//     const image = document.createElement("img");
-//     image.src = "./pics" + key + ".png";
-
-//     image.addEventListener("click", () => {
-//         const audio = new Audio("./sounds/" + key + ".wav");
-//         audio.play(); 
-//     })
-//     htmlElement.appendChild(image);
-//     const txt = document.createElement("p");
-//     txt.textContent = key[0];
-//     htmlElement.appendChild(txt);
-
-//     container.appendChild(htmlElement);
-//     document.body.appendChild(container);
-// }
+    drumLabel.classList.add("drumLabel");
+    drumLabel.textContent = drumkit[instrument];
+    keyContainer.appendChild(drumLabel);
+};
 
 window.addEventListener("keydown", (e) => {
     for(key in drumkit) {
