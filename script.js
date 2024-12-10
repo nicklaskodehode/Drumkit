@@ -26,7 +26,7 @@ for(let instrument in drumkit) {
 
     const drumLabel = document.createElement("p");
     drumLabel.classList.add("drumLabel");
-    drumLabel.textContent = drumkit[instrument];
+    drumLabel.textContent = "Press: "+drumkit[instrument];
     keyContainer.appendChild(drumLabel);
 };
 
